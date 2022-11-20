@@ -21,8 +21,6 @@ services:
     db:
         image: mariadb:${MYSQL_VERSION}
         container_name: ${MYSQL_HOST}
-#        ports:
-#            - 3306:3306
         environment:
             - MYSQL_DATABASE=${MYSQL_DATABASE}
             - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}

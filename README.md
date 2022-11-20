@@ -19,7 +19,7 @@ vi ./app/files/connection.php
 ```sh
 docker compose up -d
 ```
-4. Open phpMyAdmin and import `BloodBank.sql` into `bloodbank` database
+4. Open phpMyAdmin and import `./SQL/BloodBank.sql` into `bloodbank` database
 ```sh
 http://<ip-dockerhost>:8080
 ```
