@@ -1,0 +1,47 @@
+version: '3.7'
+services:
+    nginx:
+        image: nginx:${NGINX_VERSION}
+        ports:
+            - 80:80
+        volumes:
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - ./app:/var/www/html
+            - ./log/nginx:/var/log/nginx/
+        restart: always
+        depends_on:
+            - php
+            - db
+    php:
+        image: bitnami/php-fpm:${PHPFPM_VERSION}
+        volumes:
+            - ./php/php.ini:/usr/local/etc/php/conf.d/php.ini
+            - ./app:/var/www/html
+        restart: always
+    db:
+        image: mariadb:${MYSQL_VERSION}
+        container_name: ${MYSQL_HOST}
+#        ports:
+#            - 3306:3306
+        environment:
+            - MYSQL_DATABASE=${MYSQL_DATABASE}
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+            - MYSQL_USER=${MYSQL_USER}
+            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        volumes:
+            - ./data/:/var/lib/mysql
+            - ./log/mysql/:/var/log/mysql
+        restart: always
+    phpmyadmin:
+        image: phpmyadmin:${PHPMYADMIN_VERSION}
+        ports:
+            - 8080:80
+        environment:
+            - PMA_ARBITRARY=1
+            - PMA_HOST=${MYSQL_HOST}
+            - PMA_USER=${MYSQL_USER}
+            - PMA_PASSWORD=${MYSQL_PASSWORD}
+        restart: always
+        depends_on:
+            - db
+
