@@ -31,6 +31,15 @@ http://<ip-dockerhost>:8080
 ```sh
 http://<ip-dockerhost>
 ```
+## Description of the directory structure
+| Direcrory | Contents |
+| ------ | ------ |
+|SQL|bloodbank.sql - dump|
+|app|Website content|
+|data|Database content. Appears after installation|
+|log|Contains logs. Appears after installation|
+|nginx|default.conf|
+|php|php.ini|
 
 ## Sources
 - [NGINX](https://hub.docker.com/_/nginx)
