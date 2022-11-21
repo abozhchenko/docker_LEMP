@@ -1,7 +1,7 @@
 # docker_LEMP
 This project was created as part of the DevOps_15802 training course
 
-## Objective of the project
+## Aim of the project
 You need to run the site from this [repository](https://github.com/mentorchita/Blood-Bank-Management-System) using Docker Compose
 
 ## Installation
@@ -11,6 +11,7 @@ git clone https://github.com/abozhchenko/docker_LEMP.git
 ```
 2. Edit credentials in files `.env` and `./app/files/connection.php` 
 ```sh
+cd ./docker_LEMP
 vi .env
 vi ./app/files/connection.php
 ```
