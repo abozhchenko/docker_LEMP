@@ -2,7 +2,11 @@
 This project was created as part of the DevOps_15802 training course
 
 ## Aim of the project
-You need to run the site from this [repository](https://github.com/mentorchita/Blood-Bank-Management-System) using Docker Compose
+You need to run the site from this [repository](https://github.com/mentorchita/Blood-Bank-Management-System) using [Docker Compose](https://docs.docker.com/compose/gettingstarted)
+
+## Technologies used
+- Frontend:  NGINX, phpMyAdmin
+- Backend: PHP, MariaDB
 
 ## Installation
 1. Clone this repository to localhost:
